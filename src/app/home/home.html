@@ -1,0 +1,89 @@
+<h1>{{ title }}</h1>
+<p>Welcome to my first app.</p>
+<p>Name: {{ name }}</p>
+<p>Count: {{ count }}</p>
+<p>Age: {{ age }}</p>
+<p>Username: {{ username }}</p>
+
+<input [(ngModel)]="name" placeholder="Enter name">
+<p>Hello, {{ name }}!</p>
+
+<img [src]="imageUrl" width="100">
+
+<button (click)="decrement()" [disabled]="count <= 0">-</button>
+<button (click)="increment()">+</button>
+<button (click)="reset()">Reset</button>
+<button (click)="save()">Save</button>
+<button [disabled]="isDisabled">Can't click me</button>
+
+<hr>
+
+<!-- *ngIf directive -->
+<h3>Login Example:</h3>
+<button (click)="isLoggedIn = !isLoggedIn">
+  {{ isLoggedIn ? 'Logout' : 'Login' }}
+</button>
+
+<p *ngIf="isLoggedIn">Welcome back, {{ name }}!</p>
+<p *ngIf="!isLoggedIn">Please log in.</p>
+
+<hr>
+
+<!-- ngClass directive -->
+<h3>ngClass Example:</h3>
+<button (click)="isActive = !isActive">Toggle Active</button>
+<button (click)="isError = !isError">Toggle Error</button>
+
+<p [ngClass]="{ 'active': isActive, 'error': isError }">
+  This text changes style based on conditions.
+</p>
+
+<hr>
+
+<!-- ngStyle directive -->
+<h3>ngStyle Example:</h3>
+<input type="number" [(ngModel)]="textSize" placeholder="Font size">
+<input type="text" [(ngModel)]="textColor" placeholder="Color">
+
+<p [ngStyle]="{ 'font-size': textSize + 'px', 'color': textColor }">
+  This text changes size and color dynamically.
+</p>
+
+<hr>
+
+<h3>Pipes Example:</h3>
+<p><strong>Original:</strong> {{ message }}</p>
+<p><strong>Uppercase:</strong> {{ message | uppercase }}</p>
+<p><strong>Lowercase:</strong> {{ message | lowercase }}</p>
+<p><strong>Titlecase:</strong> {{ message | titlecase }}</p>
+
+<hr>
+
+<p><strong>Date:</strong> {{ today }}</p>
+<p><strong>Short Date:</strong> {{ today | date:'shortDate' }}</p>
+<p><strong>Full Date:</strong> {{ today | date:'fullDate' }}</p>
+<p><strong>Custom Date:</strong> {{ today | date:'dd/MM/yyyy' }}</p>
+<p><strong>Time:</strong> {{ today | date:'hh:mm a' }}</p>
+
+<hr>
+
+<p><strong>Price:</strong> {{ price }}</p>
+<p><strong>Currency (USD):</strong> {{ price | currency:'USD' }}</p>
+<p><strong>Currency (INR):</strong> {{ price | currency:'INR' }}</p>
+<p><strong>Currency (EUR):</strong> {{ price | currency:'EUR' }}</p>
+
+<hr>
+
+<p><strong>Object:</strong> {{ user | json }}</p>
+
+<hr>
+
+<!-- Component Communication -->
+<h3>Component Communication:</h3>
+<p>Parent's count: {{ parentCount }}</p>
+
+<app-child 
+  [childName]="name" 
+  [count]="parentCount" 
+  (countChanged)="onCountChanged($event)">
+</app-child>
