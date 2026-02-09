@@ -1,59 +1,79 @@
-# MyFirstApp
+My Angular Project
+A hands-on Angular application built to explore and demonstrate core Angular concepts using the latest Angular 19+ with standalone components.
+Features
+Component Architecture
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+Standalone components — modern Angular approach without NgModules
+Parent-child communication using @Input() and @Output() with EventEmitter
+Modular component structure: Home, About, Fruits, and Child components
 
-## Development server
+Data Binding & Forms
 
-To start a local development server, run:
+Two-way data binding with [(ngModel)]
+Property binding with [src], [disabled], [ngClass], [ngStyle]
+Event binding with (click) handlers
+String interpolation with {{ }}
 
-```bash
+Directives
+
+Structural directive: *ngIf for conditional rendering
+Attribute directives: ngClass for dynamic CSS classes, ngStyle for inline styles
+
+Routing
+
+Multi-page navigation using RouterOutlet and RouterLink
+Route configuration with Routes array and path redirects
+
+Built-in Pipes
+
+Text transformation: uppercase, lowercase, titlecase
+Date formatting: shortDate, fullDate, custom formats
+Currency formatting: USD, INR, EUR
+Object display: json pipe
+
+Server-Side Rendering (SSR)
+
+Angular SSR with @angular/ssr and Express
+Client hydration with event replay
+Server and client route configuration
+
+Testing
+
+Unit tests with TestBed for all components
+
+Tech Stack
+
+Angular 19+ (standalone components)
+TypeScript
+Express (SSR server)
+Karma/Jasmine (testing)
+
+Getting Started
+bash# Install dependencies
+npm install
+
+# Run development server
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# Run with SSR
+npm run dev:ssr
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
+# Run tests
 ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Navigate to http://localhost:4200/ to view the application.
+Project Structure
+src/
+├── app/
+│   ├── about/          # About page component
+│   ├── child/          # Child component (demonstrates @Input/@Output)
+│   ├── fruits/         # Fruits page component
+│   ├── home/           # Home component (core features demo)
+│   ├── app.ts          # Root component with routing
+│   ├── app.config.ts   # Application configuration
+│   ├── app.routes.ts   # Route definitions
+│   └── app.config.server.ts  # SSR configuration
+├── main.ts             # Browser bootstrap
+├── main.server.ts      # Server bootstrap
+└── server.ts           # Express server for SSR
+Author
+Deepthi Sarvamangala Mouli
