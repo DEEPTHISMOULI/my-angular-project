@@ -3,7 +3,7 @@ A hands-on Angular application built to explore and demonstrate core Angular con
 Features
 Component Architecture
 
-Standalone components — modern Angular approach without NgModules
+Standalone components: modern Angular approach without NgModules
 Parent-child communication using @Input() and @Output() with EventEmitter
 Modular component structure: Home, About, Fruits, and Child components
 
